@@ -8,6 +8,7 @@ from torch import nn
 from iter import container
 from arffset import arffset
 from TimesNet import Model
+from startime import startime
 
 # Gloab Para
 ROOT = './dataset/'
@@ -26,12 +27,12 @@ def PaTST(c_in, c_out, seq_len):
 if __name__ == '__main__':
     set_dict = {
         'BasicMotions': (6, 4, 100, 4, 4),
-        #'Cricket': (6, 12, 1197, 11, 8), 
-        #'Epilepsy': (3, 4, 207, 14, 14),
-        #'Handwriting': (3, 26, 152, 15, 85), 
-        #'Libras': (2, 15, 45, 18, 18),
-        #'RacketSports': (6, 4, 30, 16, 16), 
-        #'UWaveGestureLibrary': (3, 8, 315, 12, 12)
+        'Cricket': (6, 12, 1197, 11, 8), 
+        'Epilepsy': (3, 4, 207, 14, 14),
+        'Handwriting': (3, 26, 152, 15, 85), 
+        'Libras': (2, 15, 45, 18, 18),
+        'RacketSports': (6, 4, 30, 16, 16), 
+        'UWaveGestureLibrary': (3, 8, 315, 12, 12)
     }
     timing = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     print(f'START: {timing}')
