@@ -58,6 +58,7 @@ if __name__ == '__main__':
                 'TSSequencerPlus': TSSequencerPlus(v[0], v[1], v[2]),
                 'XCM': XCM(v[0], v[1], v[2]),
                 'gMLP': gMLP(v[0], v[1], v[2]),
+                'StarTime': startime(v[0], v[1])
             }
             for key, m in model.items():
                 m.to(DEVICE)
