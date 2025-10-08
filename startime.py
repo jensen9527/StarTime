@@ -63,8 +63,8 @@ class unit(nn.Module):
         super(unit, self).__init__()
         self.c_out = c_out
         #self.dwconv = nn.Sequential(nn.Conv1d(c_out, c_out, ks, padding='same', groups=c_out), nn.Conv1d(c_out, c_out*3, 1))
-        #self.dwconv = CalculusConv(c_out, ks)
-        self.dwconv = AnotherCalculus(c_out, ks)
+        self.dwconv = CalculusConv(c_out, ks)
+        #self.dwconv = AnotherCalculus(c_out, ks)
         self.g = nn.Sequential(nn.Conv1d(c_out*3, c_out, 1), nn.BatchNorm1d(c_out))
         self.dwconv2 = nn.Conv1d(c_out, c_out, ks, padding='same', groups=c_out)
         
@@ -131,4 +131,5 @@ if __name__ == '__main__':
     x = torch.randn(10, 3, 152)
     f = startime(3, 26)
     y = f(x)
+
     print('end')
